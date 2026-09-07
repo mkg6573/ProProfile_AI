@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background: #0b0b0b;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.chat-header {
+  height: 70px;
+  width: 100%;
+  background: #111111;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.chat-header h3 {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.chat-header span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ================= CHAT ================= */
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #0b0b0b;
+}
+
+/* ================= MESSAGES ================= */
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.assistant-message {
+  align-items: flex-start;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+/* ================= AI AVATAR ================= */
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+/* ================= MESSAGE CONTENT ================= */
+
+.message-content {
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #dddddd;
+}
+
+/* User message */
+
+.user-message .message-content {
+  background: #292929;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px;
+}
+
+/* Markdown */
+
+.message-content p {
+  margin-bottom: 10px;
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+.message-content h1,
+.message-content h2,
+.message-content h3 {
+  color: #ffffff;
+  margin: 15px 0 10px;
+}
+
+.message-content ul,
+.message-content ol {
+  padding-left: 25px;
+  margin: 8px 0;
+}
+
+.message-content li {
+  margin-bottom: 6px;
+}
+
+.message-content strong {
+  color: #ffffff;
+}
+
+.message-content code {
+  background: #252525;
+  color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+/* ================= INPUT ================= */
+
+.input-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 25px;
+  display: flex;
+  background: #181818;
+  border: 1px solid #333333;
+  border-radius: 14px;
+  padding: 6px;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.input-container input::placeholder {
+  color: #777777;
+}
+
+/* ================= SEND BUTTON ================= */
+
+.send-button {
+  width: 42px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.send-button:hover {
+  background: #dddddd;
+}
+
+.send-button:disabled {
+  background: #333333;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+/* ================= WELCOME ================= */
+
+.welcome {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.welcome h2 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #888888;
+  font-size: 15px;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .chat-header {
+    padding: 0 18px;
+  }
+
+  .messages {
+    padding: 20px 15px;
+  }
+
+  .message-content {
+    max-width: 85%;
+  }
+
+  .input-container {
+    width: 94%;
+    margin-bottom: 15px;
+  }
+}
