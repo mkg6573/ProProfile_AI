@@ -28,6 +28,8 @@ function App() {
     setQuestion("");
     setLoading(true);
 
+    console.log("API_URL =", API_URL);
+    console.log("CHAT URL =", `${API_URL}/chat`);
     try {
       const response = await fetch(`${API_URL}/chat`,
         {
